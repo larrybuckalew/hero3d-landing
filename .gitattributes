@@ -1,0 +1,15 @@
+# Normalize line endings so the repo is identical on Windows/macOS/Linux.
+* text=auto eol=lf
+
+# Lock binary files so Git never tries to diff/normalize them.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+
+# Lock the lockfile and generated Next.js types.
+package-lock.json -diff
+next-env.d.ts linguist-generated=true
