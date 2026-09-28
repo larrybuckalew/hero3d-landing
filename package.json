@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "shots": "node tools/capture.mjs",
-    "verify": "node tools/verify.mjs"
+    "preview": "npm run build && node tools/serve.mjs",
+    "verify": "node tools/verify.mjs",
+    "og": "node tools/og-card.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

@@ -6,7 +6,11 @@
 export const site = {
   name: "Helio",
   tagline: "The AI ops copilot for modern teams",
-  url: "https://helio.example.com",
+  url: "https://larrybuckalew.github.io/hero3d-landing",
+  // `metadataBase` must be the bare ORIGIN: Next.js appends `basePath` to
+  // metadata URLs itself, so putting the sub-path in here would double it up
+  // (…/hero3d-landing/hero3d-landing/opengraph-image.png).
+  origin: "https://larrybuckalew.github.io",
   description:
     "Helio watches every signal across your stack, writes the runbook, and runs the fix — so your team ships instead of firefighting.",
   primaryCta: { label: "Start free trial", href: "#cta" },

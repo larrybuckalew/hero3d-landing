@@ -19,7 +19,8 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  // Bare origin on purpose — Next appends basePath to every metadata URL.
+  metadataBase: new URL(site.origin),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
@@ -32,10 +33,13 @@ export const metadata: Metadata = {
     "runbooks",
     "3d landing page",
   ],
-  alternates: { canonical: "/" },
+  // Canonical/og:url need the FULL url: they resolve against metadataBase and are
+  // NOT given the basePath, so "/" would point at the bare origin. The trailing
+  // slash matches the served URL (trailingSlash: true).
+  alternates: { canonical: `${site.url}/` },
   openGraph: {
     type: "website",
-    url: "/",
+    url: `${site.url}/`,
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
